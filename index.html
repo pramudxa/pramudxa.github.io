@@ -281,12 +281,58 @@ footer{
   border-top:1px solid var(--border);
 }
 
+.menu-toggle{
+  display:none;
+  width:40px;
+  height:40px;
+  padding:9px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--bg-card);
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  height:2px;
+  margin:4px 0;
+  border-radius:2px;
+  background:var(--text);
+  transition:.2s;
+}
+
 @media(max-width:760px){
-  .navlinks{display:none}
-  .nav-right{gap:10px}
+  .nav-inner{min-height:66px}
+  .nav-right{gap:8px}
+  .menu-toggle{display:block}
+
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:66px;
+    left:21px;
+    right:21px;
+    flex-direction:column;
+    gap:0;
+    padding:8px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:rgba(13,20,29,.97);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{
+    padding:13px 14px;
+    border-radius:9px;
+  }
+  .navlinks a:hover{background:var(--bg-card-hover)}
+
   .grid,.applications-grid{grid-template-columns:1fr}
   .hero{min-height:76vh;padding-top:80px}
   .contact-box{align-items:flex-start;flex-direction:column}
+}
+
+@media(min-width:761px){
+  .navlinks{display:flex !important}
 }
 </style>
 </head>
@@ -303,6 +349,10 @@ footer{
         <a href="#applications" data-i18n="nav.applications">Applications</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
       <div class="lang-switch" aria-label="Language selector">
         <button class="lang-btn active" data-lang="en">EN</button>
@@ -565,6 +615,23 @@ function setLanguage(lang){
 
 document.querySelectorAll(".lang-btn").forEach(btn=>{
   btn.addEventListener("click", ()=>setLanguage(btn.dataset.lang));
+});
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".navlinks");
+
+menuToggle.addEventListener("click", ()=>{
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+});
+
+navLinks.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click", ()=>{
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+  });
 });
 
 const savedLanguage = localStorage.getItem("preferredLanguage");
