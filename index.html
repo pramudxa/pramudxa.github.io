@@ -1,1412 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Taufik Pramudika | Design Drafter & Industrial Engineering Student</title>
-
-    <meta
-        name="description"
-        content="I am an Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry. I work with CAD, technical drawing, engineering design, and supporting manufacturing processes while continuing to develop my skills in Industrial Engineering."
-    >
-
-    <meta
-        name="keywords"
-        content="Taufik Pramudika, Design Drafter, Industrial Engineering Student, AutoCAD, SOLIDWORKS, CAD, Technical Drawing, Engineering Design, Manufacturing"
-    >
-
-    <meta name="author" content="Taufik Pramudika">
-
-    <link
-        rel="canonical"
-        href="https://pramudxa.github.io/"
-    >
-
-    <style>
-
-        /* =========================
-           ROOT
-        ========================= */
-
-        :root {
-            --bg: #080d14;
-            --bg-soft: #0a1119;
-            --bg-card: #0d141d;
-            --bg-card-hover: #111c28;
-
-            --blue: #5b9bd5;
-            --blue-light: #79b7eb;
-            --blue-dark: #315b7d;
-
-            --text: #eef3f8;
-            --text-muted: #91a0b0;
-            --text-soft: #b8c4d0;
-
-            --border: #243443;
-
-            --max-width: 1080px;
-        }
-
-
-        /* =========================
-           RESET
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background:
-                radial-gradient(
-                    circle at 80% 10%,
-                    rgba(91, 155, 213, 0.10),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 10% 35%,
-                    rgba(49, 91, 125, 0.08),
-                    transparent 25%
-                ),
-                var(--bg);
-
-            color: var(--text);
-
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Arial,
-                sans-serif;
-
-            line-height: 1.7;
-
-            min-height: 100vh;
-        }
-
-
-        /* =========================
-           GLOBAL
-        ========================= */
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(
-                calc(100% - 40px),
-                var(--max-width)
-            );
-
-            margin: 0 auto;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-
-            z-index: 100;
-
-            background: rgba(8, 13, 20, 0.88);
-
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-
-            border-bottom: 1px solid rgba(36, 52, 67, 0.7);
-        }
-
-        .nav-inner {
-            height: 72px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            position: relative;
-
-            font-size: 16px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo::after {
-            content: ".";
-            color: var(--blue);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-
-            font-size: 13px;
-            font-weight: 500;
-
-            transition:
-                color 0.25s ease,
-                transform 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-            transform: translateY(-1px);
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: calc(100vh - 72px);
-
-            display: flex;
-            align-items: center;
-
-            padding: 90px 0;
-        }
-
-        .hero-grid {
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1.05fr)
-                minmax(0, 0.95fr);
-
-            gap: 80px;
-
-            align-items: center;
-        }
-
-        .eyebrow {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            margin-bottom: 22px;
-
-            color: var(--blue-light);
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-
-            width: 20px;
-            height: 1px;
-
-            background: var(--blue);
-        }
-
-        .hero h1 {
-            max-width: 650px;
-
-            font-size: clamp(
-                44px,
-                7vw,
-                76px
-            );
-
-            line-height: 0.98;
-
-            letter-spacing: -4px;
-
-            font-weight: 800;
-        }
-
-        .hero h1 span {
-            color: var(--blue-light);
-        }
-
-        .hero-description {
-            max-width: 560px;
-
-            color: var(--text-muted);
-
-            font-size: 16px;
-
-            line-height: 1.9;
-        }
-
-        .hero-description strong {
-            color: var(--text-soft);
-            font-weight: 600;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 14px;
-
-            margin-top: 32px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 46px;
-
-            padding: 0 20px;
-
-            border: 1px solid var(--border);
-            border-radius: 7px;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                background 0.25s ease;
-        }
-
-        .btn-primary {
-            background: var(--blue);
-            border-color: var(--blue);
-
-            color: #071019;
-        }
-
-        .btn-primary:hover {
-            background: var(--blue-light);
-            border-color: var(--blue-light);
-
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            color: var(--text);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-card);
-            border-color: var(--blue-dark);
-
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================
-           HERO SIDE
-        ========================= */
-
-        .hero-side {
-            position: relative;
-
-            padding-left: 30px;
-
-            border-left: 1px solid var(--border);
-        }
-
-        .hero-side p {
-            color: var(--text-muted);
-
-            font-size: 15px;
-
-            line-height: 2;
-        }
-
-        .hero-side p strong {
-            color: var(--text-soft);
-        }
-
-
-        /* =========================
-           SECTION HEADER
-        ========================= */
-
-        .section-header {
-            margin-bottom: 48px;
-        }
-
-        .section-label {
-            color: var(--blue-light);
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 3px;
-            text-transform: uppercase;
-
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: clamp(30px, 4vw, 46px);
-
-            line-height: 1.05;
-
-            letter-spacing: -1.8px;
-        }
-
-        .section-description {
-            max-width: 650px;
-
-            margin-top: 16px;
-
-            color: var(--text-muted);
-
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns:
-                0.9fr
-                1.1fr;
-
-            gap: 80px;
-
-            align-items: start;
-        }
-
-        .about-title {
-            font-size: 28px;
-
-            line-height: 1.2;
-
-            letter-spacing: -1px;
-        }
-
-        .about-text {
-            color: var(--text-muted);
-
-            font-size: 15px;
-
-            line-height: 1.9;
-        }
-
-        .about-text + .about-text {
-            margin-top: 18px;
-        }
-
-
-        /* =========================
-           FOCUS
-        ========================= */
-
-        .focus-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 16px;
-        }
-
-        .focus-card {
-            min-height: 210px;
-
-            padding: 26px;
-
-            background: var(--bg-card);
-
-            border: 1px solid var(--border);
-            border-radius: 10px;
-
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                background 0.25s ease;
-        }
-
-        .focus-card:hover {
-            background: var(--bg-card-hover);
-
-            border-color: var(--blue-dark);
-
-            transform: translateY(-5px);
-        }
-
-        .focus-number {
-            color: var(--blue);
-
-            font-size: 12px;
-            font-weight: 700;
-
-            margin-bottom: 35px;
-        }
-
-        .focus-card h3 {
-            margin-bottom: 10px;
-
-            font-size: 18px;
-        }
-
-        .focus-card p {
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            line-height: 1.7;
-        }
-
-
-        /* =========================
-           APPLICATIONS
-        ========================= */
-
-        .applications-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 20px;
-        }
-
-        .application-card {
-            position: relative;
-
-            padding: 34px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(91, 155, 213, 0.07),
-                    rgba(13, 20, 29, 0.9)
-                );
-
-            border: 1px solid var(--border);
-            border-radius: 12px;
-
-            overflow: hidden;
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease;
-        }
-
-        .application-card::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 2px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--blue),
-                    transparent
-                );
-
-            opacity: 0.7;
-        }
-
-        .application-card:hover {
-            transform: translateY(-5px);
-
-            border-color: var(--blue-dark);
-        }
-
-        .application-number {
-            color: var(--blue);
-
-            font-size: 12px;
-            font-weight: 700;
-
-            letter-spacing: 1px;
-        }
-
-        .application-card h3 {
-            margin-top: 14px;
-
-            font-size: 28px;
-
-            letter-spacing: -1px;
-        }
-
-        .application-card p {
-            margin-top: 10px;
-
-            color: var(--text-muted);
-
-            font-size: 14px;
-        }
-
-        .application-tags {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 8px;
-
-            margin-top: 24px;
-        }
-
-        .tag {
-            padding: 6px 10px;
-
-            background: rgba(91, 155, 213, 0.06);
-
-            border: 1px solid var(--border);
-            border-radius: 5px;
-
-            color: var(--text-soft);
-
-            font-size: 11px;
-            font-weight: 500;
-        }
-
-
-        /* =========================
-           INTERESTS
-        ========================= */
-
-        .interests {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-        }
-
-        .interest {
-            padding: 10px 14px;
-
-            border: 1px solid var(--border);
-            border-radius: 6px;
-
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            background: rgba(255, 255, 255, 0.01);
-
-            transition:
-                border-color 0.25s ease,
-                color 0.25s ease,
-                background 0.25s ease;
-        }
-
-        .interest:hover {
-            color: var(--text);
-
-            border-color: var(--blue-dark);
-
-            background: rgba(91, 155, 213, 0.05);
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            padding-bottom: 120px;
-        }
-
-        .contact-box {
-            display: grid;
-
-            grid-template-columns:
-                1fr
-                auto;
-
-            align-items: center;
-
-            gap: 40px;
-
-            padding: 42px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(91, 155, 213, 0.08),
-                    rgba(13, 20, 29, 0.95)
-                );
-
-            border: 1px solid var(--border);
-
-            border-radius: 12px;
-        }
-
-        .contact-box h2 {
-            font-size: clamp(28px, 4vw, 42px);
-
-            line-height: 1.05;
-
-            letter-spacing: -1.5px;
-        }
-
-        .contact-box p {
-            margin-top: 12px;
-
-            color: var(--text-muted);
-
-            font-size: 14px;
-        }
-
-        .contact-email {
-            display: inline-flex;
-            align-items: center;
-
-            gap: 10px;
-
-            margin-top: 20px;
-
-            color: var(--blue-light);
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: color 0.25s ease;
-        }
-
-        .contact-email:hover {
-            color: var(--text);
-        }
-
-        .contact-email::before {
-            content: "✉";
-
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 28px 0;
-
-            border-top: 1px solid var(--border);
-
-            color: var(--text-muted);
-
-            font-size: 12px;
-        }
-
-        .footer-inner {
-            display: flex;
-
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-        }
-
-        .footer-name {
-            color: var(--text-soft);
-
-            font-weight: 600;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-            .hero-side {
-                padding-left: 0;
-
-                padding-top: 25px;
-
-                border-left: none;
-                border-top: 1px solid var(--border);
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-
-                gap: 35px;
-            }
-
-            .focus-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-
-        @media (max-width: 650px) {
-
-            .container {
-                width: min(
-                    calc(100% - 28px),
-                    var(--max-width)
-                );
-            }
-
-            section {
-                padding: 75px 0;
-            }
-
-            .nav-inner {
-                height: 64px;
-            }
-
-            .nav-links {
-                gap: 13px;
-            }
-
-            .nav-links a {
-                font-size: 11px;
-            }
-
-            .hero {
-                min-height: auto;
-
-                padding: 80px 0;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-
-                letter-spacing: -2.5px;
-            }
-
-            .hero-description {
-                font-size: 14px;
-            }
-
-            .focus-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .applications-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .application-card {
-                padding: 26px;
-            }
-
-            .contact-box {
-                grid-template-columns: 1fr;
-
-                padding: 28px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
-
-        }
-
-    </style>
-
-
-    <!-- =========================
-         STRUCTURED DATA
-    ========================= -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Taufik Pramudika",
-        "jobTitle": "Design Drafter",
-        "description": "Industrial Engineering student and Design Drafter focused on CAD, engineering design, technical drawing, manufacturing, and continuous improvement.",
-        "email": "mailto:taufikpramudika1@gmail.com",
-        "url": "https://pramudxa.github.io/",
-        "sameAs": [
-            "https://www.linkedin.com/in/taufik-pramudika-479722331/"
-        ],
-        "knowsAbout": [
-            "Industrial Engineering",
-            "CAD",
-            "AutoCAD",
-            "SOLIDWORKS",
-            "Technical Drawing",
-            "Engineering Design",
-            "Manufacturing",
-            "Continuous Improvement"
-        ]
-    }
-    </script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="page-title">Taufik Pramudika | Design Drafter & Industrial Engineering Student</title>
+<meta id="meta-description" name="description" content="Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry, focused on CAD, technical drawing, engineering design, and supporting manufacturing processes.">
+<meta name="author" content="Taufik Pramudika">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="profile">
+<meta id="og-title" property="og:title" content="Taufik Pramudika | Design Drafter & Industrial Engineering Student">
+<meta id="og-description" property="og:description" content="Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Taufik Pramudika",
+  "url": "https://pramudxa.github.io/",
+  "jobTitle": "Design Drafter",
+  "description": "Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry.",
+  "email": "mailto:taufikpramudika1@gmail.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/taufik-pramudika-479722331/"
+  ],
+  "knowsAbout": [
+    "Industrial Engineering",
+    "CAD",
+    "Technical Drawing",
+    "Engineering Design",
+    "Die Making",
+    "Manufacturing",
+    "Continuous Improvement"
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#080d14;
+  --bg-card:#0d141d;
+  --bg-card-hover:#111c28;
+  --blue:#5b9bd5;
+  --blue-light:#79b7eb;
+  --blue-dark:#315b7d;
+  --text:#eef3f8;
+  --text-muted:#91a0b0;
+  --border:#243443;
+  --max:1120px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(91,155,213,.12),transparent 30%),
+    radial-gradient(circle at 10% 20%,rgba(49,91,125,.12),transparent 28%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(16px);
+  background:rgba(8,13,20,.78);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.brand{
+  font-weight:900;
+  letter-spacing:-.05em;
+  font-size:1.15rem;
+}
+.brand span{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:25px}
+.navlinks{display:flex;gap:25px;color:var(--text-muted);font-size:.91rem}
+.navlinks a{transition:.2s}
+.navlinks a:hover{color:var(--text)}
+
+.lang-switch{
+  display:flex;
+  align-items:center;
+  gap:3px;
+  padding:4px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:rgba(13,20,29,.9);
+}
+.lang-btn{
+  border:0;
+  background:transparent;
+  color:var(--text-muted);
+  padding:6px 10px;
+  border-radius:999px;
+  font:inherit;
+  font-size:.76rem;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s;
+}
+.lang-btn.active{
+  color:var(--text);
+  background:var(--blue-dark);
+}
+.lang-btn:hover{color:var(--text)}
+
+.hero{
+  min-height:82vh;
+  display:grid;
+  align-items:center;
+  padding:100px 0 85px;
+}
+.eyebrow{
+  color:var(--blue-light);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.17em;
+  font-size:.75rem;
+}
+h1{
+  max-width:900px;
+  font-size:clamp(3.5rem,9vw,7.4rem);
+  line-height:.9;
+  letter-spacing:-.075em;
+  margin:20px 0 30px;
+}
+.hero p{
+  max-width:790px;
+  color:var(--text-muted);
+  font-size:clamp(1.05rem,2vw,1.25rem);
+  margin:0 0 34px;
+}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  padding:12px 18px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--bg-card);
+  font-weight:750;
+  transition:.2s;
+}
+.btn:hover{
+  border-color:var(--blue-dark);
+  transform:translateY(-2px);
+}
+.btn.primary{
+  background:var(--blue);
+  color:#07111a;
+  border-color:var(--blue);
+}
+.btn.primary:hover{background:var(--blue-light)}
+
+section{
+  padding:92px 0;
+  border-top:1px solid var(--border);
+}
+.section-title{
+  color:var(--blue-light);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.75rem;
+  font-weight:850;
+  margin-bottom:14px;
+}
+h2{
+  margin:0 0 30px;
+  font-size:clamp(2rem,5vw,3.6rem);
+  letter-spacing:-.055em;
+  line-height:1.05;
+}
+.about{
+  max-width:850px;
+  color:#c8d1db;
+  font-size:1.08rem;
+}
+.about p{margin:0 0 20px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.card{
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--blue-dark);
+  background:var(--bg-card-hover);
+}
+.card h3{margin:0 0 9px;font-size:1.13rem}
+.card p{margin:0;color:var(--text-muted)}
+
+.tags,.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:24px;
+}
+.tag,.project-tags span{
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:7px 12px;
+  color:#cbd5df;
+  font-size:.84rem;
+}
+
+.applications-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.application-card{
+  position:relative;
+  padding:32px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(91,155,213,.06),rgba(255,255,255,.01));
+  overflow:hidden;
+  transition:.25s;
+}
+.application-card::after{
+  content:"";
+  position:absolute;
+  width:150px;height:150px;
+  right:-70px;top:-70px;
+  border-radius:50%;
+  background:rgba(91,155,213,.08);
+}
+.application-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--blue-dark);
+  background:var(--bg-card-hover);
+}
+.app-number{
+  color:var(--blue-light);
+  font-size:.75rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  margin-bottom:18px;
+}
+.application-card h3{margin:0 0 10px;font-size:1.45rem}
+.application-card p{margin:0;color:var(--text-muted);max-width:560px}
+
+.contact-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:17px;
+  background:var(--bg-card);
+}
+.contact-email{
+  color:var(--blue-light);
+  font-weight:750;
+  word-break:break-word;
+}
+footer{
+  padding:35px 0 50px;
+  color:var(--text-muted);
+  font-size:.88rem;
+  border-top:1px solid var(--border);
+}
+
+@media(max-width:760px){
+  .navlinks{display:none}
+  .nav-right{gap:10px}
+  .grid,.applications-grid{grid-template-columns:1fr}
+  .hero{min-height:76vh;padding-top:80px}
+  .contact-box{align-items:flex-start;flex-direction:column}
+}
+</style>
 </head>
 
-
 <body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#">TP<span>.</span></a>
 
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#focus" data-i18n="nav.focus">Focus</a>
+        <a href="#applications" data-i18n="nav.applications">Applications</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+      <div class="lang-switch" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="id">ID</button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <nav>
+<main>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="hero.eyebrow">Design Drafter • CAD</div>
+    <h1>Taufik<br>Pramudika.</h1>
+    <p data-i18n="hero.description">
+      I am an Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry. I work with CAD, technical drawing, engineering design, and supporting manufacturing processes while continuing to develop my skills in Industrial Engineering.
+    </p>
 
-        <div class="container nav-inner">
+    <div class="buttons">
+      <a class="btn primary" href="#applications" data-i18n="hero.button">View Applications</a>
+      <a class="btn" href="https://www.linkedin.com/in/taufik-pramudika-479722331/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</header>
 
-            <a href="#top" class="logo">
-                TP
-            </a>
+<section id="about">
+  <div class="wrap">
+    <div class="section-title" data-i18n="about.label">01 — About</div>
+    <h2 data-i18n="about.title">Engineering through design.</h2>
 
-            <div class="nav-links">
+    <div class="about">
+      <p data-i18n="about.p1">
+        I am an Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry. Through my work, I have gained practical experience in CAD, technical drawing, engineering design, and supporting manufacturing processes.
+      </p>
+      <p data-i18n="about.p2">
+        Working in a die-making environment has helped me understand how a design moves from technical drawings into actual manufacturing. I enjoy working with details, dimensions, and design requirements while learning how different engineering decisions affect the manufacturing process.
+      </p>
+      <p data-i18n="about.p3">
+        Alongside my professional experience, I am continuing my studies in Industrial Engineering to broaden my understanding of engineering, manufacturing, and process improvement. I aim to keep developing my technical skills and gain a deeper understanding of how design and manufacturing work together.
+      </p>
+    </div>
+  </div>
+</section>
 
-                <a href="#about">
-                    About
-                </a>
+<section id="focus">
+  <div class="wrap">
+    <div class="section-title" data-i18n="focus.label">02 — What I Work With</div>
+    <h2 data-i18n="focus.title">Areas I work with.</h2>
 
-                <a href="#focus">
-                    Focus
-                </a>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="focus.card1.title">CAD & Technical Drawing</h3>
+        <p data-i18n="focus.card1.text">Creating and developing technical drawings using CAD software, with attention to dimensions, specifications, and drawing details.</p>
+      </article>
 
-                <a href="#applications">
-                    Applications
-                </a>
+      <article class="card">
+        <h3 data-i18n="focus.card2.title">Die & Tooling Design</h3>
+        <p data-i18n="focus.card2.text">Supporting die-making work through technical drawings and design documentation for manufacturing applications.</p>
+      </article>
 
-                <a href="#contact">
-                    Contact
-                </a>
+      <article class="card">
+        <h3 data-i18n="focus.card3.title">Engineering Design</h3>
+        <p data-i18n="focus.card3.text">Developing practical design concepts based on technical requirements, dimensions, and manufacturing considerations.</p>
+      </article>
 
-            </div>
+      <article class="card">
+        <h3 data-i18n="focus.card4.title">Manufacturing Processes</h3>
+        <p data-i18n="focus.card4.text">Supporting manufacturing activities by understanding how engineering drawings and designs are applied in the production process.</p>
+      </article>
+    </div>
 
+    <div class="tags">
+      <span class="tag">Industrial Engineering</span>
+      <span class="tag">CAD</span>
+      <span class="tag">Technical Drawing</span>
+      <span class="tag">Engineering Design</span>
+      <span class="tag">Die Making</span>
+      <span class="tag">Manufacturing</span>
+      <span class="tag">Continuous Improvement</span>
+    </div>
+  </div>
+</section>
+
+<section id="applications">
+  <div class="wrap">
+    <div class="section-title" data-i18n="apps.label">03 — Applications</div>
+    <h2 data-i18n="apps.title">Applications I Use.</h2>
+
+    <div class="applications-grid">
+      <article class="application-card">
+        <div class="app-number">01</div>
+        <h3>AutoCAD</h3>
+        <p data-i18n="apps.autocad.text">Used for 2D technical drawing, engineering documentation, detailed drafting, and manufacturing-related drawings.</p>
+        <div class="project-tags">
+          <span>2D CAD</span>
+          <span>Technical Drawing</span>
+          <span>Engineering Design</span>
         </div>
-
-    </nav>
-
-
-    <main id="top">
-
-
-        <!-- =========================
-             HERO
-        ========================= -->
-
-        <section class="hero">
-
-            <div class="container hero-grid">
-
-                <div>
-
-                    <div class="eyebrow">
-                        Design Drafter • CAD
-                    </div>
-
-                    <h1>
-                        TAUFIK
-                        <span>PRAMUDIKA</span>
-                    </h1>
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="https://www.linkedin.com/in/taufik-pramudika-479722331/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-primary"
-                        >
-                            View LinkedIn
-                        </a>
-
-                        <a
-                            href="#applications"
-                            class="btn btn-secondary"
-                        >
-                            Applications
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-side">
-
-                    <p>
-                        I am an <strong>Industrial Engineering student</strong> and <strong>Design Drafter </strong>
-                        with nearly three years of experience in the die-making industry. 
-                        I work with CAD, technical drawing, engineering design, 
-                        and supporting manufacturing processes while continuing 
-                        to develop my skills in Industrial Engineering.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             ABOUT
-        ========================= -->
-
-        <section id="about">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div class="section-label">
-                        About
-                    </div>
-
-                    <h2 class="section-title">
-                        Design with purpose.
-                    </h2>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div>
-
-                        <h3 class="about-title">
-                            Industrial Engineering
-                            meets design.
-                        </h3>
-
-                    </div>
-
-
-                    <div>
-
-                        <p class="about-text">
-                            I am an Industrial Engineering student and Design Drafter with nearly three years of experience 
-                            in the die-making industry. Through my work, I have gained practical experience in CAD, 
-                            technical drawing, engineering design, and supporting manufacturing processes.
-                        </p>
-
-                        <p class="about-text">
-                            Working in a die-making environment has helped me understand how a design moves 
-                            from technical drawings into actual manufacturing. I enjoy working with details, 
-                            dimensions, and design requirements while learning how different engineering decisions 
-                            affect the manufacturing process. Alongside my professional experience, 
-                            I am continuing my studies in Industrial Engineering to broaden my understanding 
-                            of engineering, manufacturing, and process improvement. I aim to keep developing 
-                            my technical skills and gain a deeper understanding of how design and manufacturing work together.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             FOCUS
-        ========================= -->
-
-        <section id="focus">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div class="section-label">
-                        Focus
-                    </div>
-
-                    <h2 class="section-title">
-                        What I work with.
-                    </h2>
-
-                    <p class="section-description">
-                        Areas that currently shape my technical interests
-                        and development.
-                    </p>
-
-                </div>
-
-
-                <div class="focus-grid">
-
-
-                    <div class="focus-card">
-
-                        <div class="focus-number">
-                            01
-                        </div>
-
-                        <h3>
-                           CAD & Technical Drawing
-                        </h3>
-
-                        <p>
-                           Creating and developing technical drawings 
-                            using CAD software, with attention to dimensions, 
-                            specifications, and drawing details.
-                        </p>
-
-                    </div>
-
-
-                    <div class="focus-card">
-
-                        <div class="focus-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Die & Tooling Design
-                        </h3>
-
-                        <p>
-                           Supporting die-making work through technical drawings 
-                            and design documentation for manufacturing applications.
-                        </p>
-
-                    </div>
-
-
-                    <div class="focus-card">
-
-                        <div class="focus-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Engineering Design
-                        </h3>
-
-                        <p>
-                           Developing practical design concepts 
-                            based on technical requirements, dimensions, 
-                            and manufacturing considerations.
-                        </p>
-
-                    </div>
-
-
-                    <div class="focus-card">
-
-                        <div class="focus-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Manufacturing Processes
-                        </h3>
-
-                        <p>
-                           Supporting manufacturing activities by understanding 
-                            how engineering drawings and designs are applied 
-                            in the production process.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             APPLICATIONS
-        ========================= -->
-
-        <section id="applications">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div class="section-label">
-                        Applications
-                    </div>
-
-                    <h2 class="section-title">
-                        Tools I use.
-                    </h2>
-
-                    <p class="section-description">
-                        Software currently used for CAD and engineering
-                        design work.
-                    </p>
-
-                </div>
-
-
-                <div class="applications-grid">
-
-
-                    <!-- AUTOCAD -->
-
-                    <div class="application-card">
-
-                        <div class="application-number">
-                            01 / CAD
-                        </div>
-
-                        <h3>
-                            AutoCAD
-                        </h3>
-
-                        <p>
-                            Used for creating 2D technical drawings,
-                            engineering documentation, and design layouts.
-                        </p>
-
-                        <div class="application-tags">
-
-                            <span class="tag">
-                                2D CAD
-                            </span>
-
-                            <span class="tag">
-                                Technical Drawing
-                            </span>
-
-                            <span class="tag">
-                                Engineering Design
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- SOLIDWORKS -->
-
-                    <div class="application-card">
-
-                        <div class="application-number">
-                            02 / CAD
-                        </div>
-
-                        <h3>
-                            SOLIDWORKS
-                        </h3>
-
-                        <p>
-                            Used for developing 3D component designs and
-                            engineering models.
-                        </p>
-
-                        <div class="application-tags">
-
-                            <span class="tag">
-                                Part Modeling
-                            </span>
-
-                            <span class="tag">
-                                3D CAD
-                            </span>
-
-                            <span class="tag">
-                                Engineering Design
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             TECHNICAL INTERESTS
-        ========================= -->
-
-        <section>
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div class="section-label">
-                        Technical Interests
-                    </div>
-
-                    <h2 class="section-title">
-                        Areas I'm developing.
-                    </h2>
-
-                </div>
-
-
-                <div class="interests">
-
-                    <span class="interest">
-                        Industrial Engineering
-                    </span>
-
-                    <span class="interest">
-                        CAD
-                    </span>
-
-                    <span class="interest">
-                        Technical Drawing
-                    </span>
-
-                    <span class="interest">
-                        Engineering Design
-                    </span>
-
-                    <span class="interest">
-                        Manufacturing
-                    </span>
-
-                    <span class="interest">
-                        Continuous Improvement
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             CONTACT
-        ========================= -->
-
-        <section
-            id="contact"
-            class="contact"
-        >
-
-            <div class="container">
-
-                <div class="contact-box">
-
-                    <div>
-
-                        <div class="section-label">
-                            Contact
-                        </div>
-
-                        <h2>
-                            Let's connect.
-                        </h2>
-
-                        <p>
-                            For professional opportunities,
-                            collaboration, or technical discussions.
-                        </p>
-
-                        <a
-                            href="mailto:taufikpramudika1@gmail.com"
-                            class="contact-email"
-                        >
-                            taufikpramudika1@gmail.com
-                        </a>
-
-                    </div>
-
-
-                    <div>
-
-                        <a
-                            href="https://www.linkedin.com/in/taufik-pramudika-479722331/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-primary"
-                        >
-                            LinkedIn
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        <div class="container footer-inner">
-
-            <div>
-                © 2026
-                <span class="footer-name">
-                    Taufik Pramudika
-                </span>
-            </div>
-
-            <div>
-                Design • CAD • Engineering
-            </div>
-
+      </article>
+
+      <article class="application-card">
+        <div class="app-number">02</div>
+        <h3>SOLIDWORKS</h3>
+        <p data-i18n="apps.solidworks.text">Used for 3D mechanical design, part modeling, and engineering design development.</p>
+        <div class="project-tags">
+          <span>3D CAD</span>
+          <span>Part Modeling</span>
+          <span>Engineering Design</span>
         </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-    </footer>
+<section id="contact">
+  <div class="wrap">
+    <div class="section-title" data-i18n="contact.label">04 — Contact</div>
+    <h2 data-i18n="contact.title">Let's connect.</h2>
 
+    <div class="contact-box">
+      <div>
+        <p class="about" style="margin:0 0 8px" data-i18n="contact.text">
+          For professional opportunities, engineering projects, design work, or collaboration, feel free to connect with me.
+        </p>
+        <a class="contact-email" href="mailto:taufikpramudika1@gmail.com">taufikpramudika1@gmail.com</a>
+      </div>
 
+      <div class="buttons">
+        <a class="btn primary" href="https://www.linkedin.com/in/taufik-pramudika-479722331/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="mailto:taufikpramudika1@gmail.com" data-i18n="contact.emailButton">Email Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Taufik Pramudika. <span data-i18n="footer.text">Design Drafter • CAD • Industrial Engineering Student</span>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    "nav.about":"About",
+    "nav.focus":"Focus",
+    "nav.applications":"Applications",
+    "nav.contact":"Contact",
+
+    "hero.eyebrow":"Design Drafter • CAD",
+    "hero.description":"I am an Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry. I work with CAD, technical drawing, engineering design, and supporting manufacturing processes while continuing to develop my skills in Industrial Engineering.",
+    "hero.button":"View Applications",
+
+    "about.label":"01 — About",
+    "about.title":"Engineering through design.",
+    "about.p1":"I am an Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry. Through my work, I have gained practical experience in CAD, technical drawing, engineering design, and supporting manufacturing processes.",
+    "about.p2":"Working in a die-making environment has helped me understand how a design moves from technical drawings into actual manufacturing. I enjoy working with details, dimensions, and design requirements while learning how different engineering decisions affect the manufacturing process.",
+    "about.p3":"Alongside my professional experience, I am continuing my studies in Industrial Engineering to broaden my understanding of engineering, manufacturing, and process improvement. I aim to keep developing my technical skills and gain a deeper understanding of how design and manufacturing work together.",
+
+    "focus.label":"02 — What I Work With",
+    "focus.title":"Areas I work with.",
+    "focus.card1.title":"CAD & Technical Drawing",
+    "focus.card1.text":"Creating and developing technical drawings using CAD software, with attention to dimensions, specifications, and drawing details.",
+    "focus.card2.title":"Die & Tooling Design",
+    "focus.card2.text":"Supporting die-making work through technical drawings and design documentation for manufacturing applications.",
+    "focus.card3.title":"Engineering Design",
+    "focus.card3.text":"Developing practical design concepts based on technical requirements, dimensions, and manufacturing considerations.",
+    "focus.card4.title":"Manufacturing Processes",
+    "focus.card4.text":"Supporting manufacturing activities by understanding how engineering drawings and designs are applied in the production process.",
+
+    "apps.label":"03 — Applications",
+    "apps.title":"Applications I Use.",
+    "apps.autocad.text":"Used for 2D technical drawing, engineering documentation, detailed drafting, and manufacturing-related drawings.",
+    "apps.solidworks.text":"Used for 3D mechanical design, part modeling, and engineering design development.",
+
+    "contact.label":"04 — Contact",
+    "contact.title":"Let's connect.",
+    "contact.text":"For professional opportunities, engineering projects, design work, or collaboration, feel free to connect with me.",
+    "contact.emailButton":"Email Me",
+
+    "footer.text":"Design Drafter • CAD • Industrial Engineering Student"
+  },
+
+  id: {
+    "nav.about":"Tentang",
+    "nav.focus":"Bidang",
+    "nav.applications":"Aplikasi",
+    "nav.contact":"Kontak",
+
+    "hero.eyebrow":"Design Drafter • CAD",
+    "hero.description":"Saya adalah mahasiswa Teknik Industri dan Design Drafter dengan pengalaman hampir tiga tahun di industri pembuatan dies. Saya bekerja dengan CAD, gambar teknik, desain engineering, serta mendukung proses manufaktur sambil terus mengembangkan kemampuan di bidang Teknik Industri.",
+    "hero.button":"Lihat Aplikasi",
+
+    "about.label":"01 — Tentang",
+    "about.title":"Engineering melalui desain.",
+    "about.p1":"Saya adalah mahasiswa Teknik Industri dan Design Drafter dengan pengalaman hampir tiga tahun di industri pembuatan dies. Melalui pekerjaan saya, saya mendapatkan pengalaman praktis dalam CAD, gambar teknik, desain engineering, serta mendukung proses manufaktur.",
+    "about.p2":"Bekerja di lingkungan pembuatan dies membantu saya memahami bagaimana sebuah desain berkembang dari gambar teknik menjadi bagian dari proses manufaktur. Saya menikmati pekerjaan yang membutuhkan ketelitian pada detail, dimensi, dan kebutuhan desain, sekaligus memahami bagaimana keputusan engineering memengaruhi proses manufaktur.",
+    "about.p3":"Di samping pengalaman profesional, saya sedang melanjutkan studi Teknik Industri untuk memperluas pemahaman mengenai engineering, manufaktur, dan peningkatan proses. Saya ingin terus mengembangkan kemampuan teknis dan memahami lebih dalam bagaimana desain dan manufaktur saling terhubung.",
+
+    "focus.label":"02 — Yang Saya Kerjakan",
+    "focus.title":"Bidang yang saya kerjakan.",
+    "focus.card1.title":"CAD & Gambar Teknik",
+    "focus.card1.text":"Membuat dan mengembangkan gambar teknik menggunakan software CAD dengan memperhatikan dimensi, spesifikasi, dan detail gambar.",
+    "focus.card2.title":"Desain Dies & Tooling",
+    "focus.card2.text":"Mendukung pekerjaan pembuatan dies melalui gambar teknik dan dokumentasi desain untuk kebutuhan manufaktur.",
+    "focus.card3.title":"Desain Engineering",
+    "focus.card3.text":"Mengembangkan konsep desain berdasarkan kebutuhan teknis, dimensi, dan pertimbangan proses manufaktur.",
+    "focus.card4.title":"Proses Manufaktur",
+    "focus.card4.text":"Mendukung aktivitas manufaktur dengan memahami bagaimana gambar teknik dan desain diterapkan dalam proses produksi.",
+
+    "apps.label":"03 — Aplikasi",
+    "apps.title":"Aplikasi yang Saya Gunakan.",
+    "apps.autocad.text":"Digunakan untuk gambar teknik 2D, dokumentasi engineering, drafting detail, dan gambar yang berkaitan dengan kebutuhan manufaktur.",
+    "apps.solidworks.text":"Digunakan untuk desain mekanik 3D, part modeling, dan pengembangan desain engineering.",
+
+    "contact.label":"04 — Kontak",
+    "contact.title":"Mari terhubung.",
+    "contact.text":"Untuk peluang profesional, proyek engineering, pekerjaan desain, atau kolaborasi, silakan terhubung dengan saya.",
+    "contact.emailButton":"Kirim Email",
+
+    "footer.text":"Design Drafter • CAD • Mahasiswa Teknik Industri"
+  }
+};
+
+function setLanguage(lang){
+  const dict = translations[lang] || translations.en;
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.dataset.i18n;
+    if(dict[key]) el.textContent = dict[key];
+  });
+
+  document.documentElement.lang = lang;
+
+  if(lang === "id"){
+    document.title = "Taufik Pramudika | Design Drafter & Mahasiswa Teknik Industri";
+    document.getElementById("meta-description").content =
+      "Mahasiswa Teknik Industri dan Design Drafter dengan pengalaman hampir tiga tahun di industri pembuatan dies, berfokus pada CAD, gambar teknik, desain engineering, dan mendukung proses manufaktur.";
+    document.getElementById("og-title").content =
+      "Taufik Pramudika | Design Drafter & Mahasiswa Teknik Industri";
+    document.getElementById("og-description").content =
+      "Mahasiswa Teknik Industri dan Design Drafter dengan pengalaman hampir tiga tahun di industri pembuatan dies.";
+  } else {
+    document.title = "Taufik Pramudika | Design Drafter & Industrial Engineering Student";
+    document.getElementById("meta-description").content =
+      "Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry, focused on CAD, technical drawing, engineering design, and supporting manufacturing processes.";
+    document.getElementById("og-title").content =
+      "Taufik Pramudika | Design Drafter & Industrial Engineering Student";
+    document.getElementById("og-description").content =
+      "Industrial Engineering student and Design Drafter with nearly three years of experience in the die-making industry.";
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem("preferredLanguage", lang);
+}
+
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+  btn.addEventListener("click", ()=>setLanguage(btn.dataset.lang));
+});
+
+const savedLanguage = localStorage.getItem("preferredLanguage");
+setLanguage(savedLanguage === "id" ? "id" : "en");
+</script>
 </body>
 </html>
