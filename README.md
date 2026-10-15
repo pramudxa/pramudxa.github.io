@@ -1,15 +1,11 @@
-# Taufik Pramudika — Personal Website
+# Taufik Pramudika — GitHub Pages
 
-Focus:
-- Engineering Design
-- CAD
-- Technical Drawing
-- Manufacturing
-- Industrial Engineering
-- Continuous Improvement
+Personal portfolio website for Taufik Pramudika, Design Drafter and Industrial Engineering student.
 
-## GitHub Pages
-1. Create `YOUR-GITHUB-USERNAME.github.io`.
-2. Upload the files.
-3. Settings → Pages → Deploy from branch → `main` → `/ (root)`.
-4. Replace `YOUR-GITHUB-USERNAME` in `index.html`, `robots.txt`, and `sitemap.xml`.
+## SEO files
+- `index.html` — includes canonical URL and Person JSON-LD
+- `robots.txt` — allows crawling and points to the sitemap
+- `sitemap.xml` — lists the canonical homepage URL
+
+Canonical site:
+https://pramudxa.github.io/
