@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Taufik Pramudika | Design Drafter & Industrial Engineering Student</title>
+
+    <meta
+        name="description"
+        content="I am an Industrial Engineering student and Design Drafter focused on CAD, engineering design, technical drawing, manufacturing, and continuous improvement."
+    >
+
+    <meta
+        name="keywords"
+        content="Taufik Pramudika, Design Drafter, Industrial Engineering Student, AutoCAD, SOLIDWORKS, CAD, Technical Drawing, Engineering Design, Manufacturing"
+    >
+
+    <meta name="author" content="Taufik Pramudika">
+
+    <link
+        rel="canonical"
+        href="https://YOUR-GITHUB-USERNAME.github.io/"
+    >
+
+    <style>
+
+        /* =========================
+           ROOT
+        ========================= */
+
+        :root {
+            --bg: #080d14;
+            --bg-soft: #0a1119;
+            --bg-card: #0d141d;
+            --bg-card-hover: #111c28;
+
+            --blue: #5b9bd5;
+            --blue-light: #79b7eb;
+            --blue-dark: #315b7d;
+
+            --text: #eef3f8;
+            --text-muted: #91a0b0;
+            --text-soft: #b8c4d0;
+
+            --border: #243443;
+
+            --max-width: 1080px;
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(91, 155, 213, 0.10),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 35%,
+                    rgba(49, 91, 125, 0.08),
+                    transparent 25%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            line-height: 1.7;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(
+                calc(100% - 40px),
+                var(--max-width)
+            );
+
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+
+            background: rgba(8, 13, 20, 0.88);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(36, 52, 67, 0.7);
+        }
+
+        .nav-inner {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            position: relative;
+
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo::after {
+            content: ".";
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+            align-items: center;
+
+            padding: 90px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(0, 0.95fr);
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 22px;
+
+            color: var(--blue-light);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 20px;
+            height: 1px;
+
+            background: var(--blue);
+        }
+
+        .hero h1 {
+            max-width: 650px;
+
+            font-size: clamp(
+                44px,
+                7vw,
+                76px
+            );
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--blue-light);
+        }
+
+        .hero-description {
+            max-width: 560px;
+
+            color: var(--text-muted);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        .hero-description strong {
+            color: var(--text-soft);
+            font-weight: 600;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 46px;
+
+            padding: 0 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            border-color: var(--blue);
+
+            color: #071019;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-light);
+            border-color: var(--blue-light);
+
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--blue-dark);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           HERO SIDE
+        ========================= */
+
+        .hero-side {
+            position: relative;
+
+            padding-left: 30px;
+
+            border-left: 1px solid var(--border);
+        }
+
+        .hero-side p {
+            color: var(--text-muted);
+
+            font-size: 15px;
+
+            line-height: 2;
+        }
+
+        .hero-side p strong {
+            color: var(--text-soft);
+        }
+
+
+        /* =========================
+           SECTION HEADER
+        ========================= */
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            color: var(--blue-light);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 46px);
+
+            line-height: 1.05;
+
+            letter-spacing: -1.8px;
+        }
+
+        .section-description {
+            max-width: 650px;
+
+            margin-top: 16px;
+
+            color: var(--text-muted);
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.9fr
+                1.1fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .about-title {
+            font-size: 28px;
+
+            line-height: 1.2;
+
+            letter-spacing: -1px;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+        .about-text + .about-text {
+            margin-top: 18px;
+        }
+
+
+        /* =========================
+           FOCUS
+        ========================= */
+
+        .focus-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 16px;
+        }
+
+        .focus-card {
+            min-height: 210px;
+
+            padding: 26px;
+
+            background: var(--bg-card);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .focus-card:hover {
+            background: var(--bg-card-hover);
+
+            border-color: var(--blue-dark);
+
+            transform: translateY(-5px);
+        }
+
+        .focus-number {
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 35px;
+        }
+
+        .focus-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 18px;
+        }
+
+        .focus-card p {
+            color: var(--text-muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           APPLICATIONS
+        ========================= */
+
+        .applications-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .application-card {
+            position: relative;
+
+            padding: 34px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(91, 155, 213, 0.07),
+                    rgba(13, 20, 29, 0.9)
+                );
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .application-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    transparent
+                );
+
+            opacity: 0.7;
+        }
+
+        .application-card:hover {
+            transform: translateY(-5px);
+
+            border-color: var(--blue-dark);
+        }
+
+        .application-number {
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        .application-card h3 {
+            margin-top: 14px;
+
+            font-size: 28px;
+
+            letter-spacing: -1px;
+        }
+
+        .application-card p {
+            margin-top: 10px;
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+        }
+
+        .application-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 24px;
+        }
+
+        .tag {
+            padding: 6px 10px;
+
+            background: rgba(91, 155, 213, 0.06);
+
+            border: 1px solid var(--border);
+            border-radius: 5px;
+
+            color: var(--text-soft);
+
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           INTERESTS
+        ========================= */
+
+        .interests {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .interest {
+            padding: 10px 14px;
+
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+
+            background: rgba(255, 255, 255, 0.01);
+
+            transition:
+                border-color 0.25s ease,
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .interest:hover {
+            color: var(--text);
+
+            border-color: var(--blue-dark);
+
+            background: rgba(91, 155, 213, 0.05);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            padding-bottom: 120px;
+        }
+
+        .contact-box {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto;
+
+            align-items: center;
+
+            gap: 40px;
+
+            padding: 42px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(91, 155, 213, 0.08),
+                    rgba(13, 20, 29, 0.95)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(28px, 4vw, 42px);
+
+            line-height: 1.05;
+
+            letter-spacing: -1.5px;
+        }
+
+        .contact-box p {
+            margin-top: 12px;
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+            color: var(--blue-light);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: color 0.25s ease;
+        }
+
+        .contact-email:hover {
+            color: var(--text);
+        }
+
+        .contact-email::before {
+            content: "✉";
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 28px 0;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--text-muted);
+
+            font-size: 12px;
+        }
+
+        .footer-inner {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-name {
+            color: var(--text-soft);
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .hero-side {
+                padding-left: 0;
+
+                padding-top: 25px;
+
+                border-left: none;
+                border-top: 1px solid var(--border);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .focus-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .container {
+                width: min(
+                    calc(100% - 28px),
+                    var(--max-width)
+                );
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .nav-inner {
+                height: 64px;
+            }
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .hero {
+                min-height: auto;
+
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+
+                letter-spacing: -2.5px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .applications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .application-card {
+                padding: 26px;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+
+                padding: 28px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================
+         STRUCTURED DATA
+    ========================= -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Taufik Pramudika",
+        "jobTitle": "Design Drafter",
+        "description": "Industrial Engineering student and Design Drafter focused on CAD, engineering design, technical drawing, manufacturing, and continuous improvement.",
+        "email": "mailto:taufikpramudika1@gmail.com",
+        "url": "https://YOUR-GITHUB-USERNAME.github.io/",
+        "sameAs": [
+            "https://www.linkedin.com/in/taufik-pramudika-479722331/"
+        ],
+        "knowsAbout": [
+            "Industrial Engineering",
+            "CAD",
+            "AutoCAD",
+            "SOLIDWORKS",
+            "Technical Drawing",
+            "Engineering Design",
+            "Manufacturing",
+            "Continuous Improvement"
+        ]
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="container nav-inner">
+
+            <a href="#top" class="logo">
+                TP
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#focus">
+                    Focus
+                </a>
+
+                <a href="#applications">
+                    Applications
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <main id="top">
+
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Design Drafter • CAD
+                    </div>
+
+                    <h1>
+                        TAUFIK
+                        <span>PRAMUDIKA</span>
+                    </h1>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="https://www.linkedin.com/in/taufik-pramudika-479722331/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary"
+                        >
+                            View LinkedIn
+                        </a>
+
+                        <a
+                            href="#applications"
+                            class="btn btn-secondary"
+                        >
+                            Applications
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-side">
+
+                    <p>
+                        I am an
+                        <strong>Industrial Engineering student</strong>
+                        and
+                        <strong>Design Drafter</strong>
+                        interested in manufacturing, CAD, technical drawing,
+                        engineering design, and continuous improvement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-label">
+                        About
+                    </div>
+
+                    <h2 class="section-title">
+                        Design with purpose.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div>
+
+                        <h3 class="about-title">
+                            Industrial Engineering
+                            meets design.
+                        </h3>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="about-text">
+                            I am an Industrial Engineering student and
+                            Design Drafter with a strong interest in
+                            engineering design, CAD, and technical drawing.
+                        </p>
+
+                        <p class="about-text">
+                            I focus on developing practical skills in
+                            manufacturing and continuous improvement while
+                            building experience in technical and
+                            design-oriented work.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOCUS
+        ========================= -->
+
+        <section id="focus">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-label">
+                        Focus
+                    </div>
+
+                    <h2 class="section-title">
+                        What I work with.
+                    </h2>
+
+                    <p class="section-description">
+                        Areas that currently shape my technical interests
+                        and development.
+                    </p>
+
+                </div>
+
+
+                <div class="focus-grid">
+
+
+                    <div class="focus-card">
+
+                        <div class="focus-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Engineering Design
+                        </h3>
+
+                        <p>
+                            Developing practical design concepts with
+                            attention to function, dimensions, and
+                            manufacturability.
+                        </p>
+
+                    </div>
+
+
+                    <div class="focus-card">
+
+                        <div class="focus-number">
+                            02
+                        </div>
+
+                        <h3>
+                            CAD & Technical Drawing
+                        </h3>
+
+                        <p>
+                            Creating technical drawings and CAD-based
+                            designs for engineering applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="focus-card">
+
+                        <div class="focus-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Manufacturing
+                        </h3>
+
+                        <p>
+                            Understanding how engineering designs connect
+                            with practical manufacturing processes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="focus-card">
+
+                        <div class="focus-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Continuous Improvement
+                        </h3>
+
+                        <p>
+                            Exploring ways to improve processes, efficiency,
+                            and practical work methods.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             APPLICATIONS
+        ========================= -->
+
+        <section id="applications">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-label">
+                        Applications
+                    </div>
+
+                    <h2 class="section-title">
+                        Tools I use.
+                    </h2>
+
+                    <p class="section-description">
+                        Software currently used for CAD and engineering
+                        design work.
+                    </p>
+
+                </div>
+
+
+                <div class="applications-grid">
+
+
+                    <!-- AUTOCAD -->
+
+                    <div class="application-card">
+
+                        <div class="application-number">
+                            01 / CAD
+                        </div>
+
+                        <h3>
+                            AutoCAD
+                        </h3>
+
+                        <p>
+                            Used for creating 2D technical drawings,
+                            engineering documentation, and design layouts.
+                        </p>
+
+                        <div class="application-tags">
+
+                            <span class="tag">
+                                2D CAD
+                            </span>
+
+                            <span class="tag">
+                                Technical Drawing
+                            </span>
+
+                            <span class="tag">
+                                Engineering Design
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SOLIDWORKS -->
+
+                    <div class="application-card">
+
+                        <div class="application-number">
+                            02 / CAD
+                        </div>
+
+                        <h3>
+                            SOLIDWORKS
+                        </h3>
+
+                        <p>
+                            Used for developing 3D component designs and
+                            engineering models.
+                        </p>
+
+                        <div class="application-tags">
+
+                            <span class="tag">
+                                Part Modeling
+                            </span>
+
+                            <span class="tag">
+                                3D CAD
+                            </span>
+
+                            <span class="tag">
+                                Engineering Design
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TECHNICAL INTERESTS
+        ========================= -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-label">
+                        Technical Interests
+                    </div>
+
+                    <h2 class="section-title">
+                        Areas I'm developing.
+                    </h2>
+
+                </div>
+
+
+                <div class="interests">
+
+                    <span class="interest">
+                        Industrial Engineering
+                    </span>
+
+                    <span class="interest">
+                        CAD
+                    </span>
+
+                    <span class="interest">
+                        Technical Drawing
+                    </span>
+
+                    <span class="interest">
+                        Engineering Design
+                    </span>
+
+                    <span class="interest">
+                        Manufacturing
+                    </span>
+
+                    <span class="interest">
+                        Continuous Improvement
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section
+            id="contact"
+            class="contact"
+        >
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div>
+
+                        <div class="section-label">
+                            Contact
+                        </div>
+
+                        <h2>
+                            Let's connect.
+                        </h2>
+
+                        <p>
+                            For professional opportunities,
+                            collaboration, or technical discussions.
+                        </p>
+
+                        <a
+                            href="mailto:taufikpramudika1@gmail.com"
+                            class="contact-email"
+                        >
+                            taufikpramudika1@gmail.com
+                        </a>
+
+                    </div>
+
+
+                    <div>
+
+                        <a
+                            href="https://www.linkedin.com/in/taufik-pramudika-479722331/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary"
+                        >
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div>
+                © 2026
+                <span class="footer-name">
+                    Taufik Pramudika
+                </span>
+            </div>
+
+            <div>
+                Design • CAD • Engineering
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
